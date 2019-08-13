@@ -4,6 +4,7 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 ## Installation
 * Download or clone this repository
 * Go to downloaded folder
+* Run command `npm install`
 * Run command `node index.js`
 
 ## API
