@@ -1,10 +1,8 @@
 # recettes-webservice
-RESTful Web Service for Recettes App
+RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Recettes)
 
 ## Installation
-* Run command `node index.js`
-* Open [](localhost:8080)
-
+Run command `node index.js`
 
 ## API
 
