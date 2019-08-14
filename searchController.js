@@ -66,21 +66,24 @@ exports.getCommentsByRecipeId = function (req, res) {
 
 exports.getRecipes = async function (req, res) {
     result = [];
-    tagIds = req.body["tagIds"];
-    ingredientIds = req.body["ingredientIds"];
     recipes = await Recipe.find({});
-    for(tagId of tagIds) {
-        for(recipe of recipes) {
-            if(recipe["tagIds"].includes(tagId)) {
-                result.push(recipe);
+    if(req.body["tagsId"]) {
+        tagIds = req.body["tagIds"];
+        for(tagId of tagIds) {
+            for(recipe of recipes) {
+                if(recipe["tagIds"].includes(tagId)) {
+                    result.push(recipe);
+                }
             }
         }
     }
-
-    for(ingredientId of ingredientIds) {
-        for(recipe of recipes) {
-            if(recipe["ingredientIds"].includes(ingredientId)) {
-                result.push(recipe);
+    if(req.body["ingredientIds"]) {
+        ingredientIds = req.body["ingredientIds"];
+        for(ingredientId of ingredientIds) {
+            for(recipe of recipes) {
+                if(recipe["ingredientIds"].includes(ingredientId)) {
+                    result.push(recipe);
+                }
             }
         }
     }
