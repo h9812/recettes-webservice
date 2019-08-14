@@ -51,5 +51,20 @@ router.route('/ingredients/:ingredient_id')
     .put(ingredientController.update)
     .delete(ingredientController.delete);
 
+// Import comment controller
+var commentController = require('./commentController');
+
+// Comment routes
+    router.route('/comments')
+        .get(commentController.index)
+        .post(commentController.new);
+        
+    router.route('/comments/:comment_id')
+        .get(commentController.view)
+        .patch(commentController.update)
+        .put(commentController.update)
+        .delete(commentController.delete);
+    
+
 // Export API routes
 module.exports = router;
