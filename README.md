@@ -33,3 +33,10 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 * PUT `/api/tags/:id`
 * DELETE `/api/tags/:id`
 
+### Comment
+
+* GET `/api/comments`
+* POST `/api/comments`
+* GET `/api/comments/:id`
+* PUT `/api/comments/:id`
+* DELETE `/api/comments/:id`
