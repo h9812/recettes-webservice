@@ -42,12 +42,13 @@ exports.view = function (req, res) {
     });
 };
 // Handle update ingredient info
-exports.update = function (req, res) {Ingredient.findById(req.params.ingredient_id, function (err, ingredient) {
+exports.update = function (req, res) {
+    Ingredient.findById(req.params.ingredient_id, function (err, ingredient) {
         if (err)
-            res.send(err);ingredient.name = req.body.name ? req.body.name : ingredient.name;
-        ingredient.gender = req.body.gender;
-        ingredient.email = req.body.email;
-        ingredient.phone = req.body.phone;// save the ingredient and check for errors
+            res.send(err);
+        ingredient.name = req.body.name ? req.body.name : ingredient.name;
+        
+        // save the ingredient and check for errors
         ingredient.save(function (err) {
             if (err)
                 res.json(err);

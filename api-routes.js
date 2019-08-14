@@ -55,16 +55,28 @@ router.route('/ingredients/:ingredient_id')
 var commentController = require('./commentController');
 
 // Comment routes
-    router.route('/comments')
-        .get(commentController.index)
-        .post(commentController.new);
-        
-    router.route('/comments/:comment_id')
-        .get(commentController.view)
-        .patch(commentController.update)
-        .put(commentController.update)
-        .delete(commentController.delete);
+router.route('/comments')
+    .get(commentController.index)
+    .post(commentController.new);
     
+router.route('/comments/:comment_id')
+    .get(commentController.view)
+    .patch(commentController.update)
+    .put(commentController.update)
+    .delete(commentController.delete);
+
+// Import search controller
+var searchController = require('./searchController');
+
+// Search routes
+router.route('/search/ingredients/:recipe_id')
+    .get(searchController.getIngredientsByRecipeId);
+router.route('/search/comments/:recipe_id')
+    .get(searchController.getCommentsByRecipeId);
+router.route('/search/tags/:recipe_id')
+    .get(searchController.getTagsByRecipeId);
+router.route('/search/recipes')
+    .post(searchController.getRecipes);
 
 // Export API routes
 module.exports = router;

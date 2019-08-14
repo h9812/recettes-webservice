@@ -42,12 +42,17 @@ exports.view = function (req, res) {
     });
 };
 // Handle update comment info
-exports.update = function (req, res) {Comment.findById(req.params.comment_id, function (err, comment) {
+exports.update = function (req, res) {
+    Comment.findById(req.params.comment_id, function (err, comment) {
         if (err)
-            res.send(err);comment.name = req.body.name ? req.body.name : comment.name;
-        comment.gender = req.body.gender;
-        comment.email = req.body.email;
-        comment.phone = req.body.phone;// save the comment and check for errors
+            res.send(err);
+        if(req.body.content) {
+            if(comment.content != req.body.content) {
+                comment.content = req.body.content;
+                comment.modifiedDate = Date.now();
+            }
+        }
+        // save the comment and check for errors
         comment.save(function (err) {
             if (err)
                 res.json(err);

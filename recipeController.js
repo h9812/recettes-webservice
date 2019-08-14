@@ -42,12 +42,13 @@ exports.view = function (req, res) {
     });
 };
 // Handle update recipe info
-exports.update = function (req, res) {Recipe.findById(req.params.recipe_id, function (err, recipe) {
+exports.update = function (req, res) {
+    Recipe.findById(req.params.recipe_id, function (err, recipe) {
         if (err)
-            res.send(err);recipe.name = req.body.name ? req.body.name : recipe.name;
-        recipe.gender = req.body.gender;
-        recipe.email = req.body.email;
-        recipe.phone = req.body.phone;// save the recipe and check for errors
+            res.send(err);
+        // TODO: update data
+
+        // save the recipe and check for errors
         recipe.save(function (err) {
             if (err)
                 res.json(err);

@@ -42,12 +42,12 @@ exports.view = function (req, res) {
     });
 };
 // Handle update tag info
-exports.update = function (req, res) {Tag.findById(req.params.tag_id, function (err, tag) {
+exports.update = function (req, res) {
+    Tag.findById(req.params.tag_id, function (err, tag) {
         if (err)
             res.send(err);tag.name = req.body.name ? req.body.name : tag.name;
-        tag.gender = req.body.gender;
-        tag.email = req.body.email;
-        tag.phone = req.body.phone;// save the tag and check for errors
+       
+         // save the tag and check for errors
         tag.save(function (err) {
             if (err)
                 res.json(err);

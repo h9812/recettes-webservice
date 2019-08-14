@@ -16,6 +16,7 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 * GET `/api/recipes/:id`
 * PUT `/api/recipes/:id`
 * DELETE `/api/recipes/:id`
+* POST `/api/search/recipes`
 
 ### Ingredient
 
@@ -24,6 +25,7 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 * GET `/api/ingredients/:id`
 * PUT `/api/ingredients/:id`
 * DELETE `/api/ingredients/:id`
+* GET `/api/search/ingredients/:recipe_id`
 
 ### Tag
 
@@ -32,6 +34,7 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 * GET `/api/tags/:id`
 * PUT `/api/tags/:id`
 * DELETE `/api/tags/:id`
+* GET `/api/search/tags/:recipe_id`
 
 ### Comment
 
@@ -40,3 +43,5 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 * GET `/api/comments/:id`
 * PUT `/api/comments/:id`
 * DELETE `/api/comments/:id`
+* GET `/api/search/comments/:recipe_id`
+
