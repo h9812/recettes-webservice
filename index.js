@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://ubal9vgh0u8v4hagerew:ZrcnJI7XAQ60khsPVgWn@b6zmtqgtmaxasfw-mongodb.services.clever-cloud.com:27017/b6zmtqgtmaxasfw', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/recettes', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
