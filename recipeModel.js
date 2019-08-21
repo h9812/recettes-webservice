@@ -10,6 +10,7 @@ var recipeSchema = mongoose.Schema({
 	ingredientIds: [String],
 	ingredientAmounts: [String],
 	directions: [String],
+	images: [String],
 	numberOfLikes: Number,
 	ownerId: String,
 	tagIds: [String]
