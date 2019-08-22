@@ -9,6 +9,10 @@ RESTful Web Service for [Recettes Android App](https://github.com/hieumt2198/Rec
 
 ## API
 
+### User
+* GET `/api/users/:userId`
+* POST `/api/users`
+
 ### Recipe
 
 * GET `/api/recipes`
