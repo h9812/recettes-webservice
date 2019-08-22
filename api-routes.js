@@ -65,6 +65,21 @@ router.route('/comments/:comment_id')
     .put(commentController.update)
     .delete(commentController.delete);
 
+// Import user controller
+var userController = require('./userController');
+	
+// User routes
+router.route('/users')
+    .get(userController.index)
+    .post(userController.new);
+	
+router.route('/users/:user_id')
+    .get(userController.view)
+    .patch(userController.update)
+    .put(userController.update)
+    .delete(userController.delete);
+
+
 // Import search controller
 var searchController = require('./searchController');
 
